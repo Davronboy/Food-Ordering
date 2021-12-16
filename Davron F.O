@@ -1,0 +1,190 @@
+package Karoci;
+import javax.swing.*;   
+
+import java.awt.Canvas;   
+import java.awt.Color;   
+import java.awt.Graphics;   
+import java.awt.event.*;   
+public class FoodOrder extends JFrame implements ActionListener{
+	 JCheckBox f1,f2,f3,f4,f5,f6,f7,f8,f9,f10, d1,d2,d3,d4, d5, d6, d7, d8, d9, d10, s1, s2;   
+	    JButton b;   
+	    JFrame f;   
+	    JLabel lb1,lb2, lb3; 
+	  
+	    FoodOrder() {   
+	               
+	              f = new JFrame("FoodOrdering "); 
+	           f1=new JCheckBox("UK Pizza $6.35");   
+	           f2=new JCheckBox("Turkey Pizza $6.26");   
+	           f3=new JCheckBox("Double Burger $3.52");   
+	           f4=new JCheckBox("Burger $2.94");   
+	           f5=new JCheckBox("Cheeseburger $3.74");   
+	           f6=new JCheckBox("Sandwich $4");   
+	           f7=new JCheckBox("Taco $10");   
+	           f8=new JCheckBox("Chicken nuggets  $11");   
+	           f9=new JCheckBox("Ribs $10");   
+	           f10=new JCheckBox("Fish and Chips $12"); 
+	           
+	           d1=new JCheckBox("Energy drinks $2.41");    
+	           d2=new JCheckBox("Coffee $1.23");   
+	           d3=new JCheckBox("Cappuccino coffee $1.69");   
+	           d4=new JCheckBox("Expresso coffee $2.10");   
+	           d5=new JCheckBox("Coca-Cola 1.5L $3");   
+	           d6=new JCheckBox("Coca-Cola 1L $2");   
+	           d7=new JCheckBox("Coca-Cola 0.5L $1");   
+	           d8=new JCheckBox("Juices $5");   
+	           d9=new JCheckBox("Moxito $6");   
+	           d10=new JCheckBox("Milkshake $5");
+	           
+	             b = new JButton("Order");   
+	              
+	           lb1= new JLabel("FOODS"); 
+	           lb2= new JLabel("DRINKS"); 
+	           lb3 = new JLabel("SALADS");
+	           lb1.setBackground(Color.red);
+	           s1 = new JCheckBox("Caesar salad $9");
+	           s2 = new JCheckBox("Olivia salad $8");
+	           b.setBackground(Color.yellow); 
+	            
+	           ImageIcon icon = new ImageIcon("tree.jpg");
+	           JLabel label = new JLabel(icon);
+	            
+	           lb1.setBounds(30,10,150,20);  
+	           lb2.setBounds(250,10,150,20);  
+	           lb3.setBounds(450,10,150,20);  
+	           f1.setBounds(25,40,130,20);
+	           f2.setBounds(25,70,140,20); 
+	           f3.setBounds(25,100,140,20);
+	           f4.setBounds(25,130,130,20);
+	           f5.setBounds(25,160,140,20);
+	           f6.setBounds(25,190,150,20);
+               f7.setBounds(25,220,150,20);
+               f8.setBounds(25,250,150,20);   
+               f9.setBounds(25,280,150,20);   
+               f10.setBounds(25,310,150,20); 
+             
+	           d1.setBounds(250,40,150,20);   
+	           d2.setBounds(250,70,150,20);   
+	           d3.setBounds(250,100,170,20);   
+	           d4.setBounds(250,130,160,20);   
+	           d5.setBounds(250,160,150,20);   
+	           d6.setBounds(250,190,150,20);   
+	           d7.setBounds(250,220,150,20);   
+	           d8.setBounds(250,250,150,20);   
+	           d9.setBounds(250,280,150,20);   
+	           d10.setBounds(250,310,150,20);   
+	              
+	           s1.setBounds(450, 40, 130, 20);
+	           s2.setBounds(450, 70, 130, 20);
+	           b.setBounds(255,345,80,30);   
+	              
+	             b.addActionListener(this);   
+	               
+	             f.add(lb1); f.add(lb2); f.add(lb3);  f.add(s1);f.add(s2); f.add(label);
+	             f.add(f1); f.add(f2); f.add(f3); f.add(f4); f.add(f5); f.add(f6); f.add(f7); f.add(f8); f.add(f9); f.add(f10);   
+	             f.add(d1); f.add(d2); f.add(d3); f.add(d4); f.add(d5); f.add(d6); f.add(d7);f.add(d8); f.add(d9); f.add(d10); f.add(b);   
+	           f.setSize(700,500);   
+	           f.setLayout(null);   
+	           f.setVisible(true);   
+	             setDefaultCloseOperation(EXIT_ON_CLOSE);   
+	             }   
+	            
+	           public void actionPerformed(ActionEvent e){   
+	             float amount=0;   
+	           String msg="";   
+	              
+	             if(f1.isSelected()){   
+	              amount+=6.35;   
+	              msg="UK Pizza: $6.35\n";   
+	              }   
+	           if(f2.isSelected()){   
+	              amount+=6.26;   
+	              msg+="Turkey Pizza: $6.26\n";   
+	            }   
+	             if(f3.isSelected()){   
+	               amount+=3.52;   
+	             msg+="Double Burger: $3.52\n";   
+	              }   
+	           if(f4.isSelected()){
+	        	   amount+=2.94;   
+               msg+="Burger: $2.94\n";   
+           }   
+          if(f5.isSelected()){   
+               amount+=3.75;   
+               msg+="Cheeseburger: $3.75\n";}   
+          if(f6.isSelected()){   
+              amount+=4;   
+              msg+="Sandwich: $4\n";   
+          }   
+         if(f7.isSelected()){   
+              amount+=10;   
+              msg+="Taco: $10\n";   
+          }   
+         if(f8.isSelected()){   
+              amount+=11;   
+              msg+="Chicken nuggets: $11\n";   
+          }   
+         if(f9.isSelected()){   
+              amount+=10;   
+              msg+="Ribs: $10\n";   
+          }   
+         if(f10.isSelected()){   
+              amount+=12;   
+              msg+="Fish and Chips: $12\n";   
+          }   
+         if(d1.isSelected()){   
+              amount+=2.41;   
+              msg+="Energy drinks: $2.41\n";   
+          }   
+         if(d2.isSelected()){   
+              amount+=1.23;   
+              msg+="Coffee: $1.23\n";   
+          }   
+         if(d3.isSelected()){   
+             amount+=1.69;   
+             msg+="Cappuccino coffee:$1.69\n";   
+         }   
+         if(d4.isSelected()){   
+              amount+=2.10;   
+              msg+="Expresso coffee: $2.10\n";   
+          }  
+   if(d5.isSelected()){   
+             amount+=3;   
+             msg+="Coca-Cola 1.5L: $3\n";   
+         }   
+      
+   if(d6.isSelected()){   
+             amount+=2;   
+             msg+="Coca-Cola 1L: $2\n";   
+         }   
+        if(d7.isSelected()){   
+             amount+=1;   
+             msg+="Coca-Cola 0.5L: $1\n";   
+         }   
+        if(d8.isSelected()){   
+            amount+=5;   
+            msg+="Juices: $5\n";   
+        }   
+        if(d9.isSelected()){   
+            amount+=6;   
+            msg+="Moxito: $6\n";   
+        }   
+        if(d10.isSelected()){   
+            amount+=5;   
+            msg+="Milkshake: $5\n";   
+        }   
+        if(s1.isSelected()){   
+            amount+=9;   
+            msg+="Caesar salad: $9\n";   
+        } 
+        if(s2.isSelected()){   
+            amount+=8;   
+            msg+="Olivia salad: $8\n";   
+        } 
+        msg+="-----------------\n";   
+        JOptionPane.showMessageDialog(this,msg+" Total: $"+ amount); }  
+           
+        public static void main(String[] args) {  
+            new FoodOrder();  
+        }   
+}
